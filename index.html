@@ -29,10 +29,31 @@
 </head>
 
 <body>
-    <header>
+    <header class="container mx-auto">
         <h1 class="text-center text-2xl font-semibold my-3">Fake Store E-commerce</h1>
+        <div>
+            <input id="search-field" type="text" placeholder="Type here to search" class="input input-bordered input-primary w-full" />
+        </div>
     </header>
+    <main class="container mx-auto">
+        <section class="grid grid-cols-6">
+            <!-- categories -->
+            <div>
+                <h1 class="text-xl font-semibold my-2">Categories:</h1>
+                <ul id="product-menu" class="menu bg-base-100 w-full border-2">
+                   
+                </ul>
+            </div>
+            <!-- products -->
+            <div class="col-span-5">
+                <div id="products" class="grid grid-cols-3">
+
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="js/app.js"></script>
+    <script src="js/search-products.js"></script>
 </body>
 
 </html>

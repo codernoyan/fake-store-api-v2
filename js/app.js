@@ -8,10 +8,21 @@ const loadProducts = async () => {
 const showCategories = async () => {
     const categories = await loadProducts();
     // console.log(categories);
+    const menuContainer = document.getElementById('product-menu');
+    const uniqueArray = [];
     categories.forEach(category => {
-        console.log(category);
+        // console.log(category);
         const { category: menu } = category;
-        console.log(menu)
+
+        // remove duplicates and show menu
+        if (uniqueArray.includes(menu) === false) {
+            uniqueArray.push(menu);
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <a>${menu}</a>
+            `;
+            menuContainer.appendChild(li);
+        }       
     })
 }
 
