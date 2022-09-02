@@ -12,14 +12,14 @@ const showCategories = async () => {
     const uniqueArray = [];
     categories.forEach(category => {
         // console.log(category);
-        const { category: menu } = category;
+        const { category: menu, id } = category;
 
         // remove duplicates and show menu
         if (uniqueArray.includes(menu) === false) {
             uniqueArray.push(menu);
             const li = document.createElement('li');
             li.innerHTML = `
-                <a>${menu}</a>
+                <a onclick="showCategory('${menu.slice(0, 2)}')">${menu}</a>
             `;
             menuContainer.appendChild(li);
         }       
